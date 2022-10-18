@@ -23,10 +23,10 @@ ORDER BY mev.block_number;
 
 V - aggragating historical MEV data with ETH base_fee
 SELECT mev.block_number, mev.timestamp as block_timestamp,mev.gas_used, mev.f0_/1000000000 as base_fee, mev.net_coinbase_transfers, mev.net_fees, mev.burned_fees, (mev.net_coinbase_transfers + mev.net_fees) as miner_extracted,  (mev.net_coinbase_transfers + mev.net_fees + mev.net_searcher_profit_per_block_eth) miner_extractable
-FROM `testing-362420.data.one4four` as mev
+FROM four as mev
 
 
 VI - join with hstorical MEV data = final_historical_data
 final_historical_data as SELECT eth.block_number, eth.block_timestamp, eth.gas_used, eth.base_fee, (eth.net_coinbase_transfers + IFNULL(mev.net_coinbase_transfers, 0)) as net_coinbase_transfers, eth.net_fees, eth.burned_fees, (eth.miner_extracted + IFNULL(mev.net_coinbase_transfers, 0)) as miner_extracted, (eth.miner_extracted + IFNULL(mev.net_coinbase_transfers, 0) + IFNULL(mev.net_searcher_profit_per_block_eth, 0)) as miner_extractable
-FROM four as eth left outer join historical_aggregated_MEV as mev on eth.block_number = mev.block_number
+FROM five as eth left outer join historical_aggregated_MEV as mev on eth.block_number = mev.block_number
 ORDER BY eth.block_number;
