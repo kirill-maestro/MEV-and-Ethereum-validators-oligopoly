@@ -5,7 +5,7 @@ In this study I used the simulation code, visualisation, and the data preparatio
 
 Data used in the study is available under: https://drive.google.com/drive/folders/1YxkYNVhO8WDQXwinp8EfLp-4bJIeUELi?usp=sharing
 
-## Abstract## 
+## Abstract ## 
   Smart contacts on Ethereum allowed new types of services such as DeFi (decentralized finance), thus bringing in a new wave of applications and new adopters. On the other hand, high volumes, inexperienced users, and not perfect architecture of applications created new roles (e.g., MEV searchers) and enabled new earning opportunities and incentives.
   Ethereum's miners & validators decide in which order the pending transactions will be added to a block.  At the same time, many users want their transaction to be included in a block as soon as possible to make a profit from, e.g.,  arbitrage opportunities between two liquidity pools. Therefore, such users want to incentivize miners & validators to take their transactions first by setting a higher gas price for their transactions. That is what Maximum Extractable Value (MEV) is about.
 This research briefly explains the MEV phenomenon, shows the potential benefits of MEV to miners & validators, and analyzes the effect of MEV on validators' returns.
